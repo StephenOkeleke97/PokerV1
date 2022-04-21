@@ -289,7 +289,7 @@ public class HandSolverImpl implements HandSolver {
    * Sort hand in descending order of power and return list of first five cards.
    * 
    * @param hand hand of cards
-   * @return high card or null if no match
+   * @return high card 
    */
   private Hand isHighCard(List<Card> hand) {
     sortHandByPower(hand);
