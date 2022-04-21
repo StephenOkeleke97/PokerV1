@@ -36,10 +36,10 @@ public class Driver {
     });
 
     System.out.println("COMMUNITY: " + community);
-    System.out.println(p1);
-    System.out.println(p2);
-    System.out.println(p3);
-    System.out.println(p4);
+    System.out.println("PLAYER 1: " + p1);
+    System.out.println("PLAYER 2: " + p2);
+    System.out.println("PLAYER 3: " + p3);
+    System.out.println("PLAYER 4: " + p4);
 
     List<Hand> hands = playerList.stream().map(playerCards -> solver.solveHand(playerCards))
         .collect(Collectors.toList());

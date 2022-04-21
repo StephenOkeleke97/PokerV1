@@ -146,7 +146,7 @@ public class HandSolverImpl implements HandSolver {
     List<Card> firstElement = numOfOccurences.get(keysList.get(0));
     List<Card> secondElement = numOfOccurences.get(keysList.get(1));
 
-    if (firstElement.size() != 3 || secondElement.size() != 2)
+    if (firstElement.size() != 3 || secondElement.size() < 2)
       return null;
 
     List<Card> result = addFirstFiveCardsInMapToList(numOfOccurences);
@@ -211,6 +211,7 @@ public class HandSolverImpl implements HandSolver {
     }
     result.add(hand.get(0));
     for (int i = 1; i < hand.size(); i++) {
+      if (hand.get(i).getNumberOnCard() == hand.get(i - 1).getNumberOnCard()) continue;
       if (hand.get(i).getNumberOnCard() == hand.get(i - 1).getNumberOnCard() - 1) {
         result.add(hand.get(i));
         if (result.size() >= 5) {
